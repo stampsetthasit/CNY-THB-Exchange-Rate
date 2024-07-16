@@ -1,1 +1,1 @@
-https://stampsethhasit.github.io/SC-CNY-THB-Exchange-Rate-API
+https://stampsetthasit.github.io/SC-CNY-THB-Exchange-Rate-API/
