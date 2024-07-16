@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNY/THB Exchange Rate</title>
+</head>
+<body>
+    <h1>Exchange Rate</h1>
+    <h4>อัตราแลกเปลี่ยนเงินหยวนวันนี้</h4>
+    <p>Exchange rate: <span id="rate">Loading...</span></p>
+
+    <script>
+        const apiUrl = 'https://api.exchangerate-api.com/v4/latest/CNY';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const rate = data.rates.THB;
+                document.getElementById('rate').textContent = rate.toFixed(2)+" บาท/หยวน";
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('rate').textContent = 'Error fetching data';
+            });
+    </script>
+</body>
+</html>
